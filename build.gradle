@@ -18,3 +18,15 @@ dependencies {
 test {
     useJUnitPlatform()
 }
+
+apply plugin: 'java'
+
+jar {
+    manifest {
+        attributes 'Main-Class': 'bbcag.src.Main'
+    }
+
+    from {
+        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+}

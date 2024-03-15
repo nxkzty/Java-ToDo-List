@@ -27,7 +27,9 @@ public class Edit {
                 scanner.nextLine();
                 System.out.print("\nWhat should be the new text? ");
                 String newText = scanner.nextLine();
-                databaseConnection.editToDo(inputId, newText);
+                System.out.print("\nWhat should be the new date? ");
+                String newDate = scanner.nextLine();
+                databaseConnection.editToDo(inputId, newText, newDate);
                 menu.Menu();
 
             } else if (input.equals("N")) {
